@@ -1,0 +1,42 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`CatalogPage Component renders correctly and matches snapshot 1`] = `
+<styled.div>
+  <Component
+    filters={
+      Object {
+        "brand": Array [],
+        "priceRange": Array [
+          0,
+          100000,
+        ],
+        "query": "",
+        "ram": Array [],
+        "sortBy": undefined,
+        "ssd": Array [],
+      }
+    }
+    onChange={[Function]}
+    onReset={[Function]}
+  />
+  <Component
+    laptops={
+      Array [
+        Object {
+          "description": "Desc",
+          "id": "1",
+          "price": 1000,
+          "title": "Test Laptop",
+        },
+        Object {
+          "description": "Desc 2",
+          "id": "2",
+          "price": 2000,
+          "title": "Another Laptop",
+        },
+      ]
+    }
+    onAddToCart={[Function]}
+  />
+</styled.div>
+`;
