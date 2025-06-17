@@ -55,13 +55,16 @@ const LaptopPage: React.FC = () => {
         <S.Container>
             <S.TopSection>
                 <S.ImageSliderWrapper>
-                    <S.MainImage src={selectedImage || ''} alt={laptop.title} />
+                    <S.MainImage
+                        src={selectedImage ? `${process.env.PUBLIC_URL}${selectedImage}` : ''}
+                        alt={laptop.title}
+                    />
 
                     <S.Thumbnails>
                         {images.map((img, index) => (
                             <S.Thumbnail
                                 key={index}
-                                src={img}
+                                src={`${process.env.PUBLIC_URL}${img}`}
                                 alt={`img-${index}`}
                                 onClick={() => setSelectedImage(img)}
                                 isActive={img === selectedImage}
@@ -70,19 +73,28 @@ const LaptopPage: React.FC = () => {
                     </S.Thumbnails>
 
                     <S.Navigation>
-                        <S.NavButton onClick={() => {
-                            const currentIndex = images.indexOf(selectedImage || '');
-                            const prevIndex = (currentIndex - 1 + images.length) % images.length;
-                            setSelectedImage(images[prevIndex]);
-                        }}>⟨</S.NavButton>
+                        <S.NavButton
+                            onClick={() => {
+                                const currentIndex = images.indexOf(selectedImage || '');
+                                const prevIndex = (currentIndex - 1 + images.length) % images.length;
+                                setSelectedImage(images[prevIndex]);
+                            }}
+                        >
+                            ⟨
+                        </S.NavButton>
 
-                        <S.NavButton onClick={() => {
-                            const currentIndex = images.indexOf(selectedImage || '');
-                            const nextIndex = (currentIndex + 1) % images.length;
-                            setSelectedImage(images[nextIndex]);
-                        }}>⟩</S.NavButton>
+                        <S.NavButton
+                            onClick={() => {
+                                const currentIndex = images.indexOf(selectedImage || '');
+                                const nextIndex = (currentIndex + 1) % images.length;
+                                setSelectedImage(images[nextIndex]);
+                            }}
+                        >
+                            ⟩
+                        </S.NavButton>
                     </S.Navigation>
                 </S.ImageSliderWrapper>
+
 
                 <S.InfoBlock>
                     <h1 data-test="product-title">{laptop.title}</h1>

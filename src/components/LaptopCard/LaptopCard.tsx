@@ -29,7 +29,7 @@ const LaptopCard: React.FC<LaptopCardProps> = ({
     return (
         <CardWrapper data-test="product-card">
             <Link to={`/laptop/${id}`} style={{ textDecoration: 'none', color: 'inherit' }}>
-                {imageUrl && <Image src={imageUrl} alt={title} />}
+                {imageUrl && <Image src={`${process.env.PUBLIC_URL}${imageUrl}`} alt={title} />}
                 <Title>{title}</Title>
                 <Description>{description}</Description>
                 <Price data-testid="price">{price.toLocaleString('uk-UA')} грн</Price>
