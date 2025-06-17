@@ -34,6 +34,7 @@ const CartModal: React.FC<CartModalProps> = ({ onClose }) => {
         onClose();
     };
 
+
     return (
         <Overlay onClick={onClose} data-testid="overlay" >
             <ModalWindow onClick={e => e.stopPropagation()}>
@@ -45,7 +46,12 @@ const CartModal: React.FC<CartModalProps> = ({ onClose }) => {
                     <>
                         {items.map(item => (
                             <CartItemStyled key={item.id}>
-                                <Img src={item.imageUrl ? `${process.env.PUBLIC_URL}${item.imageUrl}` : `${process.env.PUBLIC_URL}/no-image.png`} alt={item.title} />
+                                <Img
+                                    src={item.imageUrl
+                                        ? `${process.env.PUBLIC_URL}/${item.imageUrl.replace(/^\/+/, '')}`
+                                        : `${process.env.PUBLIC_URL}/no-image.png`}
+                                    alt={item.title}
+                                />
                                 <Info>
                                     <ItemTitle>{item.title}</ItemTitle>
                                     <ItemPrice>{item.price} грн × {item.quantity}</ItemPrice>
