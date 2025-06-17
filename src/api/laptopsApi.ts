@@ -23,7 +23,7 @@ interface FetchLaptopsParams {
     limit?: number;
 }
 
-const API_BASE_URL = 'https://laptop-api-zfck.onrender.com';
+const API_BASE_URL = 'https://laptop-api-tg2j.onrender.com';
 
 export async function fetchLaptops(params: FetchLaptopsParams = {}): Promise<Laptop[]> {
     const query = new URLSearchParams();

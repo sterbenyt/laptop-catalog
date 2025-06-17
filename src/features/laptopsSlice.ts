@@ -56,7 +56,7 @@ const initialState: LaptopsState = {
 export const fetchLaptops = createAsyncThunk(
     'laptops/fetchLaptops',
     async () => {
-        const response = await axios.get<Laptop[]>('https://laptop-api-zfck.onrender.com/laptops');
+        const response = await axios.get<Laptop[]>('https://laptop-api-tg2j.onrender.com/laptops');
         return response.data;
     }
 );
