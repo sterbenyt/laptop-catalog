@@ -1,11 +1,11 @@
 {
   "files": {
-    "main.js": "/laptop-catalog/static/js/main.9dd3871d.js",
+    "main.js": "/laptop-catalog/static/js/main.f64442c8.js",
     "static/media/cart.svg": "/laptop-catalog/static/media/cart.55e9f4872a1cd4d251b50be448fc7a7d.svg",
     "index.html": "/laptop-catalog/index.html",
-    "main.9dd3871d.js.map": "/laptop-catalog/static/js/main.9dd3871d.js.map"
+    "main.f64442c8.js.map": "/laptop-catalog/static/js/main.f64442c8.js.map"
   },
   "entrypoints": [
-    "static/js/main.9dd3871d.js"
+    "static/js/main.f64442c8.js"
   ]
 }
