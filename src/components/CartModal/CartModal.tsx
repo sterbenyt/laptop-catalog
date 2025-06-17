@@ -25,7 +25,6 @@ type CartModalProps = {
 const CartModal: React.FC<CartModalProps> = ({ onClose }) => {
     const dispatch = useAppDispatch();
 
-    // Визначаємо тип елементів в корзині
     const items = useAppSelector(state => state.cart.items);
 
     const handleRemove = (id: string) => dispatch(removeFromCart(id));

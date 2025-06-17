@@ -1,6 +1,6 @@
 import { createGlobalStyle } from 'styled-components';
 
-const GlobalStyle = createGlobalStyle`
+export const GlobalStyle = createGlobalStyle`
     
   html, body, #root {
     height: 100%;
@@ -8,7 +8,6 @@ const GlobalStyle = createGlobalStyle`
     padding: 0;
     box-sizing: border-box;
       
-  /* Скидання стилів браузера */
   *, *::before, *::after {
     box-sizing: border-box;
   }
@@ -51,8 +50,7 @@ const GlobalStyle = createGlobalStyle`
     max-width: 100%;
     display: block;
   }
-
-  /* Додаткові класи, якщо потрібно */
+      
   .container {
     max-width: 1200px;
     margin: 0 auto;
@@ -60,4 +58,3 @@ const GlobalStyle = createGlobalStyle`
   }
 `;
 
-export default GlobalStyle;

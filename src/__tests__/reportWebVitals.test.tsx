@@ -15,7 +15,6 @@ describe('reportWebVitals', () => {
 
     it('does not call web-vitals functions if onPerfEntry is not a function', async () => {
         await reportWebVitals(undefined);
-        // Since onPerfEntry is not a function, none of these should be called
         const { getCLS, getFID, getFCP, getLCP, getTTFB } = await import('web-vitals');
 
         expect(getCLS).not.toHaveBeenCalled();

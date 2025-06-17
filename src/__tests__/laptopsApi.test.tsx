@@ -1,4 +1,4 @@
-import { fetchLaptops } from '../api/laptopsApi'; // заміни шлях на актуальний
+import { fetchLaptops } from '../api/laptopsApi';
 import { enableFetchMocks } from 'jest-fetch-mock';
 
 enableFetchMocks();
@@ -14,7 +14,7 @@ describe('fetchLaptops', () => {
 
         const result = await fetchLaptops();
 
-        expect(fetchMock).toHaveBeenCalledWith('http://localhost:4000/laptops?');
+        expect(fetchMock).toHaveBeenCalledWith('https://sterbenyt.github.io/laptop-catalog/laptops?');
         expect(result).toEqual(mockData);
     });
 
@@ -40,7 +40,6 @@ describe('fetchLaptops', () => {
             limit: 10
         });
 
-        // start = (page - 1) * limit = 10
         expect(fetchMock).toHaveBeenCalledWith(
             expect.stringContaining('_start=10&_limit=10')
         );

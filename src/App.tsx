@@ -54,7 +54,6 @@ const MainLayoutWrapper: React.FC<MainLayoutWrapperProps> = ({
         history.push(`/catalog?query=${encodeURIComponent(query)}`);
     };
 
-    // Обгортки для додавання data-testid
     const CatalogPageWrapper = () => (
         <div data-testid="catalog-page">
             <CatalogPage />

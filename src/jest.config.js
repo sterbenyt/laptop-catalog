@@ -3,7 +3,7 @@ module.exports = {
     testEnvironment: 'jsdom',
     roots: ['<rootDir>/src'],
     transformIgnorePatterns: [
-        '/node_modules/(?!axios)/' // Трансформуємо axios, щоб Jest міг його розпарсити
+        '/node_modules/(?!axios)/'
     ],
     transform: {
         '^.+\\.(ts|tsx|js|jsx)$': 'babel-jest',

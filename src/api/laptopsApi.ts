@@ -7,7 +7,6 @@ export interface Laptop {
     graphics: string;
     ssd: string;
     imageUrl?: string;
-    // додаткові поля за потребою
 }
 
 interface FetchLaptopsParams {
@@ -24,7 +23,7 @@ interface FetchLaptopsParams {
     limit?: number;
 }
 
-const API_BASE_URL = 'http://localhost:4000'; // заміни на свій бекенд або json-server
+const API_BASE_URL = 'https://laptop-api-zfck.onrender.com';
 
 export async function fetchLaptops(params: FetchLaptopsParams = {}): Promise<Laptop[]> {
     const query = new URLSearchParams();
@@ -47,8 +46,6 @@ export async function fetchLaptops(params: FetchLaptopsParams = {}): Promise<Lap
         Object.entries(params.filters).forEach(([key, value]) => {
             if (value) {
                 if (Array.isArray(value)) {
-                    // для priceRange - треба додаткова логіка
-                    // (json-server не підтримує складні фільтри, можливо треба обробка на фронті)
                 } else {
                     query.append(key, value);
                 }

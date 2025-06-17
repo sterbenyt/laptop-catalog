@@ -1,5 +1,6 @@
 {
   "name": "laptop-catalog",
+  "homepage": "https://sterbenyt.github.io/laptop-catalog",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -14,6 +15,7 @@
     "ajv-keywords": "^3.5.2",
     "axios": "^0.27.2",
     "cheerio": "0.22.0",
+    "gh-pages": "^6.3.0",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "react-icons": "^5.5.0",
@@ -32,7 +34,9 @@
     "start:api": "json-server --watch db.json --port 4000",
     "test:coverage": "react-scripts test --coverage --watchAll=false",
     "cypress:open": "cypress open",
-    "cypress:run": "cypress run"
+    "cypress:run": "cypress run",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   },
   "eslintConfig": {
     "extends": [
@@ -74,5 +78,17 @@
     "redux-thunk": "^3.1.0",
     "ts-jest": "^29.1.1",
     "web-streams-polyfill": "^4.1.0"
+  },
+  "description": "This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).",
+  "main": "babel.config.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sterbenyt/laptop-catalog.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/sterbenyt/laptop-catalog/issues"
   }
 }

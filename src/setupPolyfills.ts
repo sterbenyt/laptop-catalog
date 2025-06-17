@@ -1,4 +1,3 @@
-// Для Node.js (використовуй вбудовані поліфіли)
 if (typeof TextEncoder === 'undefined') {
     global.TextEncoder = require('util').TextEncoder;
 }
@@ -11,4 +10,4 @@ if (typeof ReadableStream === 'undefined') {
     global.ReadableStream = require('node:stream/web').ReadableStream;
 }
 
-export {}; // To make this file a module
+export {};

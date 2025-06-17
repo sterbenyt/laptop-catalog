@@ -26,22 +26,17 @@ describe('LaptopDetails', () => {
     it('renders title, description, price, specs and image', () => {
         render(<LaptopDetails {...mockProps} />);
 
-        // Title
         expect(screen.getByText(mockProps.title)).toBeInTheDocument();
 
-        // Description
         expect(screen.getByText(mockProps.description)).toBeInTheDocument();
 
-        // Price
         expect(screen.getByText(`Ціна: ${mockProps.price} грн`)).toBeInTheDocument();
 
-        // Specs list
         Object.entries(mockProps.specs).forEach(([key, value]) => {
             expect(screen.getByText(new RegExp(`${key}:`, 'i'))).toBeInTheDocument();
             expect(screen.getByText(value)).toBeInTheDocument();
         });
 
-        // Image with correct src and alt
         const image = screen.getByRole('img');
         expect(image).toHaveAttribute('src', mockProps.imageUrls[0]);
         expect(image).toHaveAttribute('alt', mockProps.title);

@@ -37,8 +37,6 @@ export interface LaptopsState {
     itemsPerPage: number;
 }
 
-// додатково export slice.reducer, slice.actions, ...
-
 
 const LaptopList: React.FC<LaptopListProps> = ({ laptops, onAddToCart }) => {
     if (!laptops.length) {

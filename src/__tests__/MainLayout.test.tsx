@@ -3,7 +3,6 @@ import { render, screen, fireEvent } from '@testing-library/react';
 import MainLayout from '../layouts/MainLayout';
 import '@testing-library/jest-dom';
 
-// Мокаємо Header і Footer, якщо вони складні або містять логіку
 jest.mock('../components/Header/Header', () => (props: any) => (
     <div data-testid="mock-header">
         Header

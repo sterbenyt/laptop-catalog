@@ -70,7 +70,7 @@ describe('Header component', () => {
                 <Header />
             </MemoryRouter>
         );
-        // Перевіряємо, що цифра 5 присутня як рядок
+
         expect(wrapperWithItems.text()).toContain('5');
 
         useSelectorMock.mockReturnValue(0);
@@ -82,7 +82,6 @@ describe('Header component', () => {
         expect(wrapperWithoutItems.text()).not.toContain('5');
     });
 
-    // Нові тести для підвищення покриття
 
     it('does not throw error and does not call onCartOpen if onCartOpen is not provided', () => {
         useSelectorMock.mockReturnValue(2);
@@ -189,9 +188,9 @@ describe('Header component', () => {
         );
 
         const badges = wrapper.find('[data-testid="cart-count-badge"]');
-        expect(badges.length).toBeGreaterThan(0); // перевірка що є
-        const badge = badges.at(0); // беремо перший елемент
-        expect(badge.text()).toBe('5'); // 2 + 3 = 5
+        expect(badges.length).toBeGreaterThan(0);
+        const badge = badges.at(0);
+        expect(badge.text()).toBe('5');
     });
 
 

@@ -1,4 +1,3 @@
-// src/features/cart/cartSlice.ts
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 
 interface CartItem {
@@ -13,8 +12,6 @@ interface CartState {
     items: CartItem[];
     isOpen: boolean;
 }
-
-
 
 const initialState: CartState = {
     items: [],

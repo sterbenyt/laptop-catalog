@@ -10,7 +10,6 @@ interface PaginationProps {
 const Pagination: React.FC<PaginationProps> = ({ currentPage, totalPages, onPageChange }) => {
     const pages = [];
 
-    // Формуємо масив сторінок для відображення (наприклад, від 1 до totalPages)
     for (let i = 1; i <= totalPages; i++) {
         pages.push(i);
     }

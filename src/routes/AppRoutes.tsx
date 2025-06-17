@@ -6,8 +6,6 @@ import DeliveryPage from '../pages/DeliveryPage/DeliveryPage';
 import AboutPage from '../pages/AboutPage/AboutPage';
 import NotFoundPage from '../pages/NotFoundPage/NotFoundPage';
 
-// Тут можна додати типи параметрів маршруту, якщо потрібно
-
 const appRoutes = [
     {
         path: '/',

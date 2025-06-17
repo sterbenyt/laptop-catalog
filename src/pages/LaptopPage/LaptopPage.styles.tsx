@@ -58,9 +58,8 @@ export const Navigation = styled.div`
     position: absolute;
     top: 50%;
     width: 100%;
-    pointer-events: none; /* щоб кліки не блокували зображення */
-
-    /* Ліва кнопка всередині фото, зміщена на 10px від лівого краю */
+    pointer-events: none; 
+    
     & > button:first-child {
         position: absolute;
         left: 10px;
@@ -68,7 +67,6 @@ export const Navigation = styled.div`
         pointer-events: auto;
     }
 
-    /* Права кнопка всередині фото, зміщена на 10px від правого краю */
     & > button:last-child {
         position: absolute;
         right: 10px;
@@ -137,7 +135,6 @@ export const Tabs = styled.div`
     margin-bottom: 20px;
 `;
 
-// Виключаємо active з пропсів, що передаються у DOM
 export const TabButton = styled.button.withConfig({
     shouldForwardProp: (prop) => prop !== 'active',
 })<{ active?: boolean }>`
