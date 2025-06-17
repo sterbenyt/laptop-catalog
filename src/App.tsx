@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import {
-    BrowserRouter as Router,
     Switch,
     Route,
     Redirect,
@@ -25,15 +24,13 @@ const App: React.FC = () => {
     };
 
     return (
-        <Router>
-            <ErrorBoundary>
-                <MainLayoutWrapper
-                    onCartOpen={toggleCart}
-                    isCartOpen={isCartOpen}
-                    toggleCart={toggleCart}
-                />
-            </ErrorBoundary>
-        </Router>
+        <ErrorBoundary>
+            <MainLayoutWrapper
+                onCartOpen={toggleCart}
+                isCartOpen={isCartOpen}
+                toggleCart={toggleCart}
+            />
+        </ErrorBoundary>
     );
 };
 
@@ -54,36 +51,6 @@ const MainLayoutWrapper: React.FC<MainLayoutWrapperProps> = ({
         history.push(`/catalog?query=${encodeURIComponent(query)}`);
     };
 
-    const CatalogPageWrapper = () => (
-        <div data-testid="catalog-page">
-            <CatalogPage />
-        </div>
-    );
-
-    const LaptopPageWrapper = () => (
-        <div data-testid="laptop-page">
-            <LaptopPage />
-        </div>
-    );
-
-    const DeliveryPageWrapper = () => (
-        <div data-testid="delivery-page">
-            <DeliveryPage />
-        </div>
-    );
-
-    const AboutPageWrapper = () => (
-        <div data-testid="about-page">
-            <AboutPage />
-        </div>
-    );
-
-    const NotFoundPageWrapper = () => (
-        <div data-testid="notfound-page">
-            <NotFoundPage />
-        </div>
-    );
-
     return (
         <MainLayout onCartOpen={onCartOpen} onSearch={handleSearch}>
             {isCartOpen && <CartModal onClose={toggleCart} />}
@@ -91,11 +58,11 @@ const MainLayoutWrapper: React.FC<MainLayoutWrapperProps> = ({
                 <Route exact path="/">
                     <Redirect to="/catalog" />
                 </Route>
-                <Route exact path="/catalog" component={CatalogPageWrapper} />
-                <Route path="/laptop/:id" component={LaptopPageWrapper} />
-                <Route path="/delivery" component={DeliveryPageWrapper} />
-                <Route path="/about" component={AboutPageWrapper} />
-                <Route path="*" component={NotFoundPageWrapper} />
+                <Route exact path="/catalog" component={CatalogPage} />
+                <Route path="/laptop/:id" component={LaptopPage} />
+                <Route path="/delivery" component={DeliveryPage} />
+                <Route path="/about" component={AboutPage} />
+                <Route path="*" component={NotFoundPage} />
             </Switch>
         </MainLayout>
     );
